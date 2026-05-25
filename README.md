@@ -1,4 +1,4 @@
 Raylib trial
 
-![lenna-negative](image.png)
-![lenna-lego](image-1.png)
+![lenna-negative](assets/image.png)
+![lenna-lego](assets/image-1.png)
