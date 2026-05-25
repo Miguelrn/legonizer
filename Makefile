@@ -15,6 +15,7 @@ INC_DIR = include
 BUILD_DIR = build
 OBJ_DIR = $(BUILD_DIR)/obj
 BIN_DIR = $(BUILD_DIR)/bin
+LIB_DIR = lib
 
 # Source files
 SRC = $(wildcard $(SRC_DIR)/*.c)
@@ -29,6 +30,7 @@ DEP = $(OBJ:.o=.d)
 CFLAGS = -Wall -Wextra -std=c11 -I$(INC_DIR)
 DEBUGFLAGS = -g
 RELEASEFLAGS = -O2
+LDFLAGS = -L$(LIB_DIR) -lraylib -lopengl32 -lgdi32 -lwinmm
 
 # ===============================
 # Default target
@@ -52,7 +54,7 @@ release: $(BIN_DIR)/$(TARGET)
 # ===============================
 $(BIN_DIR)/$(TARGET): $(OBJ)
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(OBJ) -o $@
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
 # ===============================
 # Compile source files
