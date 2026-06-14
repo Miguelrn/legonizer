@@ -274,7 +274,7 @@ void load_lenna(void){
 
         if (button_draw(legoBtn)){
             working = ImageCopy(img);
-            lego_filter(&working, 20);
+            lego_filter(&working, 10);
             lenna = LoadTextureFromImage(working);
             UnloadImage(working);
         }
